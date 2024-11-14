@@ -8,7 +8,7 @@
 
 pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
-int counter = 0; // critical section <=> global resource
+int counter = 0;
 
 static void *handle_th1(void *args)
 {
@@ -23,12 +23,11 @@ static void *handle_th1(void *args)
     pthread_cond_signal(&cond);
     pthread_mutex_unlock(&lock);
 
-    pthread_exit(NULL); // exit or return;
+    pthread_exit(NULL);
 }
 
 int main(int argc, char const *argv[])
 {
-    /* code */
     int ret;
     pthread_t thread_id1;
 
@@ -41,7 +40,6 @@ int main(int argc, char const *argv[])
     pthread_mutex_lock(&lock);
     while (1)
     {
-        // ready in advance when pthread_cond_signal() is called
         pthread_cond_wait(&cond, &lock);
         if (counter == THRESHOLD)
         {

@@ -11,8 +11,7 @@ int counter = 2; // shared variable/shared resources/global variable
 static void *handle_th1(void *args)
 {
     pthread_mutex_lock(&lock1);
-    // critical section
-    printf("thread1 handler, counter: %d\n", ++counter);
+    printf("thread1 handler, counter: %d\n", ++counter); // critical section
     pthread_mutex_unlock(&lock1);
 }
 
@@ -26,7 +25,6 @@ static void *handle_th2(void *args)
 
 int main(int argc, char const *argv[])
 {
-    /* code */
     int ret;
     pthread_t thread_id1, thread_id2;
 
@@ -42,6 +40,5 @@ int main(int argc, char const *argv[])
         return -1;
     }
     sleep(7);
-    // used to block for the end of a thread and release
     return 0;
 }

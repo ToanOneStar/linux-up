@@ -4,13 +4,7 @@
 #include <unistd.h>
 #include <pthread.h>
 
-pthread_t thread_id1, thread_id2, thread_id3;
-
-typedef struct
-{
-    char name[30];
-    char msg[30];
-} thr_data_t;
+pthread_t thread_id1, thread_id2;
 
 static void *thr_handle1(void *args)
 {
@@ -27,11 +21,6 @@ static void *thr_handle2(void *args)
         printf("thread2 handler\n");
         sleep(1);
     };
-}
-
-static void *thr_handle3(void *args)
-{
-    pthread_detach(pthread_self());
 }
 
 int main(int args, char const *argv[])
@@ -51,19 +40,6 @@ int main(int args, char const *argv[])
         return -1;
     }
 
-    // while (1)
-    // {
-    //     if (ret = pthread_create(&thread_id3, NULL, &thr_handle3, NULL))
-    //     {
-    //         printf("pthread_create() error number = %d\n", ret);
-    //         break;
-    //     }
-    //     counter++;
-    //     if (counter % 1000 == 0)
-    //     {
-    //         printf("Thread created: %d\n", counter);
-    //     }
-    // }
     while (1)
         ;
     return 0;
