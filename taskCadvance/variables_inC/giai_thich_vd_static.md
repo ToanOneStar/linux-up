@@ -1,0 +1,1 @@
+- ở ví dụ trong file static_exam.c nếu không sử dụng từ khóa static thì sẽ in ra giá trị chỉ là 1 còn khi dùng static để kiểm soát thời gian timelife của biến a trong suốt thời gian runtime nên sẽ in ra từ 1 đến 10

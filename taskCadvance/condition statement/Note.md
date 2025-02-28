@@ -1,0 +1,9 @@
+- condition statement chuyển hướng thực hiện của program
+- giá trị của điều kiện chỉ có true hoặc false
+- cấu trúc if else, if else lồng nhau
+- về quy tắc khi lập trình có if thì phải có else dù cho không làm gì
+- cấu trúc switch case
+- Đánh giá: switch case có tốc độ cao hơn if else do được tối ưu bằng jump table hoặc binary search
+- Khi case là 1 chuỗi liên tiếp thì convert thành jump table
+- Khi case không liên tiếp sẽ convert về binary search
+- switch case trực quan, dễ bảo trì, dễ vận hành hơn if else

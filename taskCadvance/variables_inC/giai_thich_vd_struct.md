@@ -1,0 +1,2 @@
+Đầu tiên CPU sẽ chọn biến có size lớn nhất ở đây là double là 8 byte và caoas riêng 1 block cho nó. Sau đó sẽ thực hiện tuần tự từ phần tử đầu tiên. Do có 3 kiểu char nên sẽ chiếm 3 byte mà kiểu int chỉ ở vị trí là bội của 4 nên sẽ có 1 vùng nhớ phụ padding chèn vào 1 byte, sau đó chèn int 4 byte vào là đủ 1 block. Và sẽ cấp 1 block mới cho kiểu char là 1 byte
+--> vậy tổng sẽ có 3 block và size là 3\*8=24 byte
